@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-display-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Subtle editorial grain / smooth textures */
+.bg-cream-stone {
+  background-color: #F8F5EE;
+}
+
+.bg-cream-dark {
+  background-color: #121212;
+}
+
+/* Print stylesheet for Resume Export */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+
+  /* Page break avoidance for resume sections */
+  .resume-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  @page {
+    margin: 1.2cm;
+    size: A4 portrait;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none;
+  }
+}
